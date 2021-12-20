@@ -1,0 +1,713 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="http://lijianhong.top/words.js"></script>
+  <title>English</title>
+  <style type="text/css">
+	body{
+		margin:0 auto;
+		font-size:18px;
+	}
+	header{
+		height:100px;
+		background:url("images/header.jpg") no-repeat center ;
+		color:white;
+		font-size:3rem;
+		text-align:center;
+		padding-top:1.5rem;
+		text-shadow:pink 3px 2px ;
+	}
+	footer{
+		background:black;
+		color:white;
+		text-align:center;
+		height:50px;
+		padding-top:10px;
+	}
+	div{
+	background-color:rgb(200,200,250);
+	}
+	div#menu{
+		height:30px;
+		width:83em;
+		top:20px;
+		padding:25px;
+		text-align:center;
+	}
+	div#menu span{
+		border:3px outset   ;
+		background-color:rgb(50,50,50);
+		border-radius: 10px ;
+		padding:5px ;
+		color:rgb(255,255,255) ;
+		margin:60px;
+		cursor: pointer;
+		}
+	div#menu span:hover{
+	  background-color:rgb(0,0,200);
+	 }
+	div#menu span.onmouseover{  /*定义onmouseover类*/
+		border:3px outset ;
+	    background-color:rgb(50,50,200);
+	}
+	div#menu span.onclick{    /*定义onclick类*/
+	    border:3px  inset  ;
+		background-color:rgb(0,0,100);
+		color:rgb(100,250,100);
+	}
+	section{
+	 display: flex ;
+	 height: 90px;
+	 flex-wrap: wrap;
+	}
+	article{
+	 border:1px solid rgb(50,150,50);
+     color:rgb(0,100,0) ;
+	}
+	article#art1{
+	 flex: 1 200px;
+	 background:url("images/27.jpg") no-repeat center ;
+	}
+	article#art2{
+	 flex: 2 100px;
+	 background:url("images/25.jpg") no-repeat center ;
+	}
+	article#art3{
+	 flex: 2 200px;
+	 background:url("images/26.jpg") no-repeat center ;
+	}
+	article#art4{
+	 flex: 2 200px;
+	 background:url("images/24.jpg") no-repeat center ;
+	}
+	div#window{
+	width:50%;   /*相对于body的80%*/
+	height:50%;
+	background-color:rgb(200,200,250);
+	position:absolute; /*不继承父类了,父类是div*/
+	left:10%;       /*位置*/
+	top:20%;
+	text-align:right; /*让里面的文本（close按钮在右边）*/
+	}
+	div#window1{
+	width:30%;   /*相对于body的80%*/
+	height:50%;
+	background-color:rgb(200,200,250);
+	position:absolute; /*不继承父类了,父类是div*/
+	left:40%;       /*位置*/
+	top:10%;
+	text-align:right; /*让里面的文本（close按钮在右边）*/
+	}
+	div#window2{
+	width:30%;   /*相对于body的80%*/
+	height:50%;
+	background-color:rgb(200,200,250);
+	position:absolute; /*不继承父类了,父类是div*/
+	left:40%;       /*位置*/
+	top:10%;
+	text-align:right; /*让里面的文本（close按钮在右边）*/
+	}
+	div#window3{
+	width:30%;   /*相对于body的80%*/
+	height:50%;
+	background-color:rgb(200,200,250);
+	position:absolute; /*不继承父类了,父类是div*/
+	left:40%;       /*位置*/
+	top:10%;
+	text-align:right; /*让里面的文本（close按钮在右边）*/
+	}
+	input#close{
+	position:absolute;
+	right:0%;       /*位置*/
+	top:0%;
+	font-size:20px;
+	margin:10px;
+	background-color:rgb(220,200,200);
+	}
+	input#close1{
+	position:absolute;
+	right:0%;       /*位置*/
+	top:0%;
+	font-size:20px;
+	margin:10px;
+	background-color:rgb(220,200,200);
+	}
+	input#close2{
+	position:absolute;
+	right:0%;       /*位置*/
+	top:0%;
+	font-size:20px;
+	margin:10px;
+	background-color:rgb(220,200,200);
+	}
+	input#close3{
+	position:absolute;
+	right:0%;       /*位置*/
+	top:0%;
+	font-size:20px;
+	margin:10px;
+	background-color:rgb(220,200,200);
+	}
+	input#search{
+	position:absolute;
+	font-size:20px;
+	left:0%;
+	top:0%;
+	margin:10px;
+	}
+	input#ok{
+	position:absolute;
+	font-size:20px;
+	left:56%;
+	top:0%;
+	margin:10px;
+	}
+	input#prev{
+	position:absolute;
+	font-size:30px;
+	left:0%;
+	top:0%;
+	margin:10px;
+	}
+	input#next{
+	position:absolute;
+	font-size:30px;
+	left:20%;
+	top:0%;
+	margin:10px;
+	}
+	p#symbol{
+	text-align:center;
+	font-size:50px;
+	}
+	p#word{
+	text-align:center;
+	font-size:50px;
+	}
+	p#chinese{
+	text-align:center;
+	font-size:50px;
+	}
+	p#symbol1{
+	position:absolute;
+	left:0%;
+	top:20%;
+	font-size:20px;
+	color:rgb(100,170,20);
+	}
+	p#chinese1{
+	position:absolute;
+	left:0%;
+	top:50%;
+	font-size:20px;
+	color:rgb(100,170,20);
+	}
+	p#point{
+	position:absolute;
+	left:25%;
+	top:70%;
+	font-size:20px;
+	color:red;
+	}
+	input#a{
+	position:absolute;
+	left:0%;
+	top:30%;
+	font-size:20px;
+	}
+    input#aa{
+	position:absolute;
+	left:5%;
+	top:30%;
+	font-size:20px;
+	width:20em;
+	}
+	input#b{
+	position:absolute;
+	left:0%;
+	top:40%;
+	font-size:20px;
+	}
+    input#bb{
+	position:absolute;
+	left:5%;
+	top:40%;
+	font-size:20px;
+	width:20em;
+	}
+	input#c{
+	position:absolute;
+	left:0%;
+	top:50%;
+	font-size:20px;
+	}
+    input#cc{
+	position:absolute;
+	left:5%;
+	top:50%;
+	font-size:20px;
+	width:20em;
+	}
+	input#d{
+	position:absolute;
+	left:0%;
+	top:60%;
+	font-size:20px;
+	}
+    input#dd{
+	position:absolute;
+	left:5%;
+	top:60%;
+	font-size:20px;
+	width:20em;
+	}
+	input#ok1{
+	position:absolute;
+	left:40%;
+	top:80%;
+	font-size:25px;
+	}
+	span#span1{
+	position:absolute;
+	left:2%;
+	top:18%;
+	font-size:20px;
+	}
+	p#word1{
+	text-align:center;
+	font-size:30px;
+	color:navy;
+	}
+	p#show{
+	position:absolute;
+	left:50%;
+	top:65%;
+	font-size:20px;
+	color:red;
+	}
+	p#times{
+	position:absolute;
+	left:0%;
+	top:70%;
+	font-size:15px;
+	color:white;
+	}
+	p#time{
+	position:absolute;
+	left:0%;
+	top:30%;
+	font-size:20px;
+	color:white;
+	}
+	span#chinese{
+	position:absolute;
+	left:0%;
+	top:15%;
+	font-size:20px;
+	color:rgb(100,170,20);
+	}
+	input#spell{
+    position:absolute;
+	left:0%;
+	top:35%;
+	font-size:20px;
+	width:200px;
+	color:rgb(100,170,20);
+	}
+	input#submit{
+    position:absolute;
+	left:0%;
+	top:50%;
+	font-size:30px;
+	width:150px;
+	color:black;
+	text-align:center;
+	}
+	input#true{
+    position:absolute;
+	left:0%;
+	top:65%;
+	font-size:20px;
+	width:150px;
+	color:black;
+	text-align:center;
+	}
+	span#spelling{
+    position:absolute;
+	left:0%;
+	top:25%;
+	}
+	span#truth{
+	position:absolute;
+	left:0%;
+	top:80%;
+	color:red;
+	}
+	span#judge{
+	position:absolute;
+	left:50%;
+	top:70%;
+	color:red;
+	}
+	input#turn{
+	position:absolute;
+	left:50%;
+	top:50%;
+	font-size:20px;
+	width:150px;
+	color:black;
+	}
+  </style>
+  <script type="text/javascript">
+  <!--
+	var words = {};
+	words={
+		length:en6.length,
+		单词:[],
+		音标:[],
+		中文:[],
+	};
+	for(i=0;i<words.length;i++){
+		var s = en6[i];
+		var arr = s.split("/");
+		words.单词.push(arr[0]);
+		words.音标.push(arr[1]);
+		words.中文.push(arr[2]);
+	}
+  //-->
+  </script>
+  <script type="text/javascript">
+  <!--
+	window.onload=function(){
+		//刷新页面时保证窗口关闭
+		document.querySelector("div#window").style.display="none";
+        document.querySelector("div#window1").style.display="none";
+		document.querySelector("div#window2").style.display="none";
+		document.querySelector("div#window3").style.display="none";
+
+		var fontSize =  Math.floor(window.innerWidth/100) ;
+		switch (fontSize){
+			case 17 :	 case 16 :	 case 15 : 
+			case 14 :	 case 13 : 	 case 12 :
+			case 11 : fontSize =  fontSize*1.5 ; break;
+			case 10 : 
+			case 9 :  fontSize =  fontSize*1.8 ; break;
+			case 8 :  
+			case 7 :  fontSize =  fontSize*2 ; break;
+			case 6 :  
+			case 5 :  fontSize =  fontSize*2.5 ; break;
+			case 4 : 
+			case 3 : fontSize =  fontSize*3 ; break;
+			default: fontSize =  fontSize*3; 
+		}
+		document.body.style.fontSize = fontSize + "px" ;
+   
+		var sectionHeight =  window.innerHeight - 150 - 50 - 50 ;
+		document.querySelector("section").style.height = sectionHeight + "px";
+		var sectionH = window.innerHeight - 150 - 50  - 50;
+	    document.querySelector("section").style.height = sectionH + "px" ;
+		//document.querySelector获取对象
+		var menuDom=document.querySelector("div#menu");
+		var windowDom=document.querySelector("div#window");
+		var windowDom1=document.querySelector("div#window1");
+		var windowDom2=document.querySelector("div#window2");
+		var windowDom3=document.querySelector("div#window3");
+		var closeDom=document.querySelector("input#close");
+		var closeDom1=document.querySelector("input#close1");
+		var closeDom2=document.querySelector("input#close2");
+		var closeDom3=document.querySelector("input#close3");
+		var prevDom=document.querySelector("input#prev");
+		var nextDom=document.querySelector("input#next");
+		var searchDom=document.querySelector("input#search");
+		var okDom=document.querySelector("input#ok");
+		var wordDom=document.querySelector("p#word");
+		var wordDom1=document.querySelector("p#word1");
+		var symbolDom=document.querySelector("p#symbol");
+		var chineseDom=document.querySelector("p#chinese");
+		var symbolDom1=document.querySelector("p#symbol1");
+		var chineseDom1=document.querySelector("p#chinese1");
+		var pointDom=document.querySelector("p#point");
+		var a = document.querySelector("input#a");
+		var b = document.querySelector("input#b");
+		var c = document.querySelector("input#c");
+		var d = document.querySelector("input#d");
+        var aa = document.querySelector("input#aa");
+		var bb = document.querySelector("input#bb");
+		var cc = document.querySelector("input#cc");
+		var dd = document.querySelector("input#dd");
+		var showDom = document.querySelector("p#show");
+		var timesDom = document.querySelector("p#times");
+		var timeDom = document.querySelector("p#time");
+		var okDom1=document.querySelector("input#ok1");
+		var chineseDom=document.querySelector("span#chinese");
+		var judgeDom=document.querySelector("span#judge");
+		var truthDom=document.querySelector("span#truth");
+		var spellDom=document.querySelector("input#spell");
+		var submitDom=document.querySelector("input#submit");
+		var turnDom=document.querySelector("input#turn");
+		var trueDom=document.querySelector("input#true");
+        var footerDom=document.querySelector("footer");
+
+		//更新最底部日期，何时打开显示这个时候的时间
+		var myDate = new Date();
+		footerDom.textContent+= myDate.getFullYear() +'年' + (myDate.getMonth()+1) +'月' + myDate.getDate() +'日'; 
+		//点击close按钮使窗口关闭
+		closeDom.onclick=function(){
+			var windowDom=document.querySelector("div#window");
+			windowDom.style.display="none";
+	    }
+		closeDom1.onclick=function(){
+			var windowDom1=document.querySelector("div#window1");
+			windowDom1.style.display="none";
+	    }
+		closeDom2.onclick=function(){
+			var windowDom2=document.querySelector("div#window2");
+			windowDom2.style.display="none";
+	    }
+		closeDom3.onclick=function(){
+			var windowDom3=document.querySelector("div#window3");
+			windowDom3.style.display="none";
+	    }
+		//动态生成几个按钮
+		var menuArr =["背单词","查单词","闯关模式","写一写"];
+	        for(var i=0;i<menuArr.length;i++){
+				var spanDom = document.createElement("span");
+				spanDom.textContent=menuArr[i];
+				spanDom.onmouseover=function(){
+					this.classname="onmouseover";
+				}
+				spanDom.onmouseout=function(){
+					this.classname="";
+				}
+				spanDom.onclick=function(){
+					this.classname="onclick";
+				}
+				//实现背单词的功能
+				if(i==0){
+					spanDom.onclick = function(){
+						this.className =  "onclick" ;
+						document.querySelector("div#window").style.display="block";
+						var j=0;
+						nextDom.onclick=function(){
+							j++;
+							wordDom.textContent = words.单词[j];
+							symbolDom.textContent = "/"+words.音标[j]+"/";
+							chineseDom.textContent = words.中文[j];
+						}
+						prevDom.onclick=function(){
+							j--;
+							wordDom.textContent = words.单词[j];
+							symbolDom.textContent = "/"+words.音标[j]+"/";
+							chineseDom.textContent = words.中文[j];
+						}
+				}
+				}
+				//实现查单词的功能
+				if(i==1){
+					spanDom.onclick = function(){
+						this.className =  "onclick" ;
+						document.querySelector("div#window1").style.display="block";
+						ok.onclick=function(){
+							for(var j=0;j<words.length;j++){
+								if(searchDom.value===words.单词[j]){
+									symbolDom1.textContent = "音标："+"/"+words.音标[j]+"/";
+									chineseDom1.textContent = "中文："+words.中文[j];
+									return;
+								}
+							}
+							point.textContent = "单词输入有误，请重新输入！";
+						}
+					}
+				}
+				//实现闯关模式的功能
+				if(i==2){
+					spanDom.onclick=function(){
+					this.className =  "onclick" ;
+					document.querySelector("div#window2").style.display="block";
+					var i = Math.floor(Math.random()*5497);
+					var z=0;
+						okDom1.onclick=function(){
+							z++;
+							timesDom.textContent="今日已练习单词"+z+"个";
+							var i = Math.floor(Math.random()*5497);
+							var j = Math.floor(Math.random()*5497);
+							var k = Math.floor(Math.random()*5497);
+							var m = Math.floor(Math.random()*5497);
+							wordDom1.textContent = words.单词[i];
+							var n = Math.floor(Math.random()*3);
+							if(n == 0){
+								aa.value = words.中文[k];
+								bb.value = words.中文[i];
+								cc.value = words.中文[j];
+								dd.value = words.中文[m];
+							}else if(n == 1){
+								aa.value = words.中文[k];
+								bb.value = words.中文[j];
+								cc.value = words.中文[m];
+								dd.value = words.中文[i];
+							}else if(n == 2){
+								aa.value = words.中文[i];
+								bb.value = words.中文[m];
+								cc.value = words.中文[k];
+								dd.value = words.中文[j];
+							}else{
+								aa.value = words.中文[m];
+								bb.value = words.中文[k];
+								cc.value = words.中文[i];
+								dd.value = words.中文[j];
+							}
+							a.onclick = doMath;
+							b.onclick = doMath;
+							c.onclick = doMath;
+							d.onclick = doMath;
+						    function doMath(){
+								var rr;
+								if(this.value == "A"){
+									rr = aa.value;}
+								else if(this.value == "B"){
+									rr = bb.value;}
+								else if(this.value == "C"){
+									rr = cc.value;}
+								else{
+									rr = dd.value;}
+								if(rr ===  words.中文[i]){
+									showDom.textContent = ("答对了");
+								}else{
+									showDom.textContent = ("不好意思，答错了");
+								}	
+						}
+						}
+						
+					}
+					
+					}
+					//实现写一写的功能
+				if(i==3){
+					spanDom.onclick=function(){
+						this.className =  "onclick" ;
+						document.querySelector("div#window3").style.display="block";
+						var j = Math.floor(Math.random()*5497);
+						chineseDom.textContent=words.中文[j];
+						submitDom.onclick=function(){
+						if(spellDom.value===null)
+						{
+								judgeDom.textContent=" ";
+						}
+						if(spellDom.value===words.单词[j]){
+							judgeDom.textContent="恭喜，回答正确！";
+						}
+						else{
+							judgeDom.textContent="回答错误，再接再厉！";
+						}
+						}
+						trueDom.onclick=function(){
+							truthDom.textContent=words.单词[j];
+						}
+						turnDom.onclick=function(){
+							var j = Math.floor(Math.random()*5497);
+							chineseDom.textContent=words.中文[j];
+							submitDom.onclick=function(){
+							if(spellDom.value===null)
+						    {
+								judgeDom.textContent=" ";
+							}
+							if(spellDom.value===words.单词[j]){
+								judgeDom.textContent="恭喜，回答正确！";
+							}
+							else{
+								judgeDom.textContent="回答错误，再接再厉！";
+							}
+							}
+							trueDom.onclick=function(){
+								truthDom.textContent=words.单词[j];
+							}
+							}
+
+
+				}
+				}
+				menuDom.appendChild(spanDom);
+	}
+	};
+  //-->
+  </script>
+ </head>
+ <body>
+   <header> 
+   就 背 单 词
+   </header>
+   <div id="menu" class=""></div>
+   <section>
+    <article id = "art1">
+	</article>
+	<article id = "art2">  
+	</article>
+	<article id = "art3">
+	</article>
+	<article id = "art4">
+	</article>
+  </section>
+   <footer>
+   Code By Guolijia On 
+   </footer>
+   <div id="window" class="">
+    <div id="" class="">
+	 <input type="button" id="prev" value="上一个">
+	 <input type="button" id="next" value="下一个">
+	 <input type="button" id="close" value="关闭">
+	 <p id="word" class=""></p>
+     <p id="symbol"></p>
+	 <p id="chinese"></p>
+    </div>
+   </div>
+   <div id="window1" class="">
+    <div id="" class="">
+	 <input type="text" id="search" value="请输入要搜素的英文">
+	 <input type="button" id="ok" value="搜索">
+	 <input type="button" id="close1" value="关闭">
+     <p id="symbol1">音标：</p>
+	 <p id="chinese1">中文：</p>
+	 <p id="point"></p>
+    </div>
+   </div>
+   <div id="window2" class="">
+    <div id="" class="">
+	 <input type="button" id="close2" value="关闭">
+	 <p id="word1" class=""></p>
+	 <span id="span1">请选择你的答案</span>
+     <br/>
+	 <input type="button" value="A" id="a">
+	 <input type="text" value="敏锐的" id="aa">
+	 <br/>
+     <input type="button" value="B" id="b">
+     <input type="text" value="调节" id="bb">
+     <br/>
+     <input type="button" value="C" id="c">
+     <input type="text" value="管理" id="cc">
+     <br/>
+     <input type="button" value="D" id="d">
+     <input type="text" value="准许...加入" id="dd">
+     <br/><br/>
+     <p id="show"></p>
+     <input type="button" value="再来一题" id="ok1">
+	 <p id="times"></p>
+    </div>
+   </div>
+   <div id="window3" class="">
+    <div id="" class="">
+	 <input type="button" id="close3" value="关闭">
+     <span id="chinese"></span></br></br>
+	 <span id="spelling">请用户拼写</span></br>
+	 <input type="text" id="spell"></br>
+	 <input type="button" id="submit" value="提交">
+	 <input type="button" id="turn" value="换一个">
+	 <input type="button" id="true" value="查看正确答案"></br></br>
+	 <span id="judge"></span></br></br>
+	 <span id="truth"></span>
+	
+    </div>
+   </div>
+ </body>
+</html>
